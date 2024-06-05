@@ -3,7 +3,7 @@
 client_id = "eb09c2a874c7865acde280e665f62bde"
 name = "bibekshop"
 handle = "bibekshop"
-application_url = "https://tax-notebook-site-batteries.trycloudflare.com"
+application_url = "https://maternity-franklin-dangerous-baker.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://tax-notebook-site-batteries.trycloudflare.com/auth/callback",
-  "https://tax-notebook-site-batteries.trycloudflare.com/auth/shopify/callback",
-  "https://tax-notebook-site-batteries.trycloudflare.com/api/auth/callback"
+  "https://maternity-franklin-dangerous-baker.trycloudflare.com/auth/callback",
+  "https://maternity-franklin-dangerous-baker.trycloudflare.com/auth/shopify/callback",
+  "https://maternity-franklin-dangerous-baker.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
