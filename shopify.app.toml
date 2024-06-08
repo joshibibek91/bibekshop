@@ -3,7 +3,7 @@
 client_id = "eb09c2a874c7865acde280e665f62bde"
 name = "bibekshop"
 handle = "bibekshop"
-application_url = "https://ctrl-holdem-determines-stuffed.trycloudflare.com"
+application_url = "https://texts-forty-announcement-wagner.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://ctrl-holdem-determines-stuffed.trycloudflare.com/auth/callback",
-  "https://ctrl-holdem-determines-stuffed.trycloudflare.com/auth/shopify/callback",
-  "https://ctrl-holdem-determines-stuffed.trycloudflare.com/api/auth/callback"
+  "https://texts-forty-announcement-wagner.trycloudflare.com/auth/callback",
+  "https://texts-forty-announcement-wagner.trycloudflare.com/auth/shopify/callback",
+  "https://texts-forty-announcement-wagner.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
