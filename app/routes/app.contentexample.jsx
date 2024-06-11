@@ -1,45 +1,81 @@
-import { Card, ResourceList, ResourceItem, Text } from '@shopify/polaris';
-import { useState } from 'react';
+import { IndexTable, Card, Text, Badge, useBreakpoints } from '@shopify/polaris';
+import React from 'react';
 
-const items = [
-  {
-    id: '6',
-    url: 'posts/6',
-    title: 'How To Get Value From Wireframes',
-    author: 'Jonathan Mangrove',
-  },
-];
+function IndexTableWithoutCheckboxesExample() {
+  const orders = [
+    {
+      id: '1020',
+      order: '#1020',
+      date: 'Jul 20 at 4:34pm',
+      customer: 'Jaydon Stanton',
+      total: '$969.44',
+      paymentStatus: <Badge progress="complete">Paid</Badge>,
+      fulfillmentStatus: <Badge progress="incomplete">Unfulfilled</Badge>,
+    },
+    {
+      id: '1019',
+      order: '#1019',
+      date: 'Jul 20 at 3:46pm',
+      customer: 'Ruben Westerfelt',
+      total: '$701.19',
+      paymentStatus: <Badge progress="partiallyComplete">Partially paid</Badge>,
+      fulfillmentStatus: <Badge progress="incomplete">Unfulfilled</Badge>,
+    },
+    {
+      id: '1018',
+      order: '#1018',
+      date: 'Jul 20 at 3:44pm',
+      customer: 'Leo Carder',
+      total: '$798.24',
+      paymentStatus: <Badge progress="complete">Paid</Badge>,
+      fulfillmentStatus: <Badge progress="incomplete">Unfulfilled</Badge>,
+    },
+  ];
 
-function ResourceItemExample() {
-  const [selectedItems, setSelectedItems] = useState([]);
+  const resourceName = {
+    singular: 'order',
+    plural: 'orders',
+  };
+
+  const rowMarkup = orders.map(({ id, order, date, customer, total, paymentStatus, fulfillmentStatus }, index) => (
+    <IndexTable.Row id={id} key={id} position={index}>
+      <IndexTable.Cell>
+        <Text variant="bodyMd" fontWeight="bold" as="span">
+          {order}
+        </Text>
+      </IndexTable.Cell>
+      <IndexTable.Cell>{date}</IndexTable.Cell>
+      <IndexTable.Cell>{customer}</IndexTable.Cell>
+      <IndexTable.Cell>
+        <Text as="span" alignment="end" numeric>
+          {total}
+        </Text>
+      </IndexTable.Cell>
+      <IndexTable.Cell>{paymentStatus}</IndexTable.Cell>
+      <IndexTable.Cell>{fulfillmentStatus}</IndexTable.Cell>
+    </IndexTable.Row>
+  ));
 
   return (
     <Card>
-      <ResourceList
-        resourceName={{singular: 'blog post', plural: 'blog posts'}}
-        items={items}
-        selectedItems={selectedItems}
-        onSelectionChange={setSelectedItems}
-        renderItem={(item) => {
-          const {id, url, title, author} = item;
-          const authorMarkup = author ? <div>by {author}</div> : null;
-          return (
-            <ResourceItem
-              id={id}
-              url={url}
-              accessibilityLabel={`View details for ${title}`}
-              name={title}
-            >
-              <Text variant="bodyMd" fontWeight="bold" as="h3">
-                {title}
-              </Text>
-              {authorMarkup}
-            </ResourceItem>
-          );
-        }}
-      />
+      <IndexTable
+        condensed={useBreakpoints().smDown}
+        resourceName={resourceName}
+        itemCount={orders.length}
+        headings={[
+          { title: 'Order' },
+          { title: 'Date' },
+          { title: 'Customer' },
+          { title: 'Total', alignment: 'end' },
+          { title: 'Payment status' },
+          { title: 'Fulfillment status' },
+        ]}
+        selectable={false}
+      >
+        {rowMarkup}
+      </IndexTable>
     </Card>
   );
 }
 
-export default ResourceItemExample;
+export default IndexTableWithoutCheckboxesExample;

@@ -3,7 +3,7 @@
 client_id = "eb09c2a874c7865acde280e665f62bde"
 name = "bibekshop"
 handle = "bibekshop"
-application_url = "https://vanilla-thrown-reviews-authentication.trycloudflare.com"
+application_url = "https://skiing-advice-antibody-consensus.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://vanilla-thrown-reviews-authentication.trycloudflare.com/auth/callback",
-  "https://vanilla-thrown-reviews-authentication.trycloudflare.com/auth/shopify/callback",
-  "https://vanilla-thrown-reviews-authentication.trycloudflare.com/api/auth/callback"
+  "https://skiing-advice-antibody-consensus.trycloudflare.com/auth/callback",
+  "https://skiing-advice-antibody-consensus.trycloudflare.com/auth/shopify/callback",
+  "https://skiing-advice-antibody-consensus.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
